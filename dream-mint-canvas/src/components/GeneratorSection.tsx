@@ -310,13 +310,13 @@ const GeneratorSection = ({ isWalletConnected, onImageGenerated }) => {
                   
                   <div className="space-y-2">
                     <div>
-                      <p className="text-sm font-medium text-gray-300">IPFS Image:</p>
-                      <p className="text-xs text-gray-400 break-all">{ipfsHash}</p>
+                      <p className="text-sm font-medium text-gray-300">IPFS Image(metadata):</p>
+                      <p className="text-xs text-gray-400 break-all">https://pink-geographical-tarsier-269.mypinata.cloud/ipfs/{ipfsHash}</p>
                     </div>
                     
                     <div>
-                      <p className="text-sm font-medium text-gray-300">Token URI(metadata):</p>
-                      <p className="text-xs text-gray-400 break-all">https://pink-geographical-tarsier-269.mypinata.cloud/ipfs/{tokenURI}</p>
+                      <p className="text-sm font-medium text-gray-300">Token URI:</p>
+                      <p className="text-xs text-gray-400 break-all">{tokenURI}</p>
                     </div>
                     
                     <div className="mt-2 pt-2 border-t border-gray-800">
