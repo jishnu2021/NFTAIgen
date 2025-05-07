@@ -35,7 +35,7 @@ const GeneratorSection = ({ isWalletConnected, onImageGenerated }) => {
 
     try {
       // Make a POST request to the Flask API
-      const response = await axios.post("http://localhost:5000/generate-image", {
+      const response = await axios.post("https://nftaigenbackend.onrender.com/generate-image", {
         prompt,
       });
 
@@ -45,7 +45,7 @@ const GeneratorSection = ({ isWalletConnected, onImageGenerated }) => {
       // Proxy the image through the backend to avoid CORS issues
       try {
         // Make a request to a backend proxy endpoint that will fetch the image for us
-        const proxyResponse = await axios.post("http://localhost:5000/proxy-image", {
+        const proxyResponse = await axios.post("https://nftaigenbackend.onrender.com/proxy-image", {
           image_url: imageUrl
         }, {
           responseType: 'arraybuffer'  // Important for binary data like images
@@ -113,7 +113,7 @@ const GeneratorSection = ({ isWalletConnected, onImageGenerated }) => {
         // If we don't have local data, proxy the image through our backend
         try {
           // Make a request to a backend proxy endpoint that will fetch the image
-          const proxyResponse = await axios.post("http://localhost:5000/proxy-image", {
+          const proxyResponse = await axios.post("https://nftaigenbackend.onrender.com/proxy-image", {
             image_url: generatedImage
           }, {
             responseType: 'arraybuffer'  // Important for binary data like images
